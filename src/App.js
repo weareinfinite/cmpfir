@@ -8,6 +8,7 @@ import SignUp from './components/auth/SignUp'
 
 class App extends Component {
   render () {
+    console.log('App props', this.props)
     return (
       <BrowserRouter>
         <div className='App'>
@@ -15,7 +16,7 @@ class App extends Component {
           <Switch>
             <Route path='/' exact component={Dashboard} />
             <Route
-              path='/new-project'
+              path='/create'
               render={props => console.log(props) || <h1>Hello</h1>}
             />
             <Route path='/project/:id' component={ProjectDetails} />

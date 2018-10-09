@@ -4,7 +4,7 @@ export default () => {
   return (
     <ul className='right'>
       <li>
-        <NavLink to='/new-project'>New Project</NavLink>
+        <NavLink to='/create'>New Project</NavLink>
       </li>
       <li><NavLink to='/logout'>Logout</NavLink></li>
       <li>
