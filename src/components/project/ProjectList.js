@@ -1,12 +1,14 @@
 import React from 'react'
 import ProjectSummery from './ProjectSummery'
 
-export default () => {
+export default ({ projects }) => {
   return (
     <div className='project-list section'>
-      <ProjectSummery />
-      <ProjectSummery />
-      <ProjectSummery />
+      {projects &&
+        projects.map(project => (
+          <ProjectSummery key={project.id} project={project} />
+        ))}
+
     </div>
   )
 }
