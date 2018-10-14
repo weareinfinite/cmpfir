@@ -1,13 +1,21 @@
+import { ADD_PROJECT, FETCH_PROJECS } from '../actions/actionTypes'
 const initialState = {
-  projects: [
-    { id: 1, title: 'Project 1', content: 'Project 1 Content' },
-    { id: 2, title: 'Project 2', content: 'Project 2 Content' },
-    { id: 3, title: 'Project 3', content: 'Project 3 Content' }
-  ]
+  projects: []
 }
 
 const projectReducer = (state = initialState, action) => {
-  return state
+  switch (action.type) {
+    case ADD_PROJECT:
+      console.log(ADD_PROJECT, action.project)
+      return state
+
+    case FETCH_PROJECS:
+      console.log('Projects : ', action.data)
+      return { ...state, projects: action.data }
+
+    default:
+      return state
+  }
 }
 
 export default projectReducer

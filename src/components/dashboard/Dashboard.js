@@ -3,7 +3,16 @@ import { connect } from 'react-redux'
 import Notifications from './Notifications'
 import ProjectList from '../project/ProjectList'
 
+import { fetchProject } from '../../actions/projectActions'
+
 class Dashboard extends Component {
+  constructor (props) {
+    super(props)
+  }
+
+  componentDidMount () {
+    this.props.fetchProject()
+  }
   render () {
     const { projects } = this.props
     return (
@@ -27,4 +36,4 @@ function stateToProps (state) {
   }
 }
 
-export default connect(stateToProps)(Dashboard)
+export default connect(stateToProps, { fetchProject })(Dashboard)
